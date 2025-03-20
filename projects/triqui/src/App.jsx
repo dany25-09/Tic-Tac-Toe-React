@@ -52,6 +52,11 @@ function App() {
     return null
   }
 
+  const checkEndGame = (newBoard) => {
+    //si todas las celdas estan ocupadas hay un empate
+    return newBoard.every((cell) => cell !== null)
+  }
+
   const updateBoard = (index) => {
     //no se actualiza esta poscicion si ya esta ocupada o si ya hay un ganador
     if(board[index] !== null || winner) return  
@@ -69,7 +74,9 @@ function App() {
     const newWinner = checkWinner(newBoard)
     if(newWinner){
       setWinner(newWinner) //actualiza el ganador (Es asincrono)
-    } // todo:check id game is over 
+    } else if(checkEndGame(newBoard)){
+      setWinner(false) //actualiza el empate (Es asincrono)
+    }
   }
 
   //Basta con poner todos los estados en su valor inicial
@@ -82,6 +89,7 @@ function App() {
   return (
     <main className='flex flex-col justify-center items-center w-fit mx-auto mt-10 gap-5'>
       <h1>Tic Tac Toe</h1>
+      <button onClick={resetGame} className='button-style'>Reset juego</button>
       <section className='grid grid-cols-3 gap-2.5'>
         {
          board.map((cell, index) => {
@@ -110,7 +118,7 @@ function App() {
               </header>
 
               <footer>
-                <button onClick={resetGame} className='h-[35px] w-[150px] rounded-4xl border-2 border-white hover:bg-gray-700 cursor-pointer'>Empezar de nuevo</button>
+                <button onClick={resetGame} className='button-style'>Empezar de nuevo</button>
               </footer>
             </div>
           </section>

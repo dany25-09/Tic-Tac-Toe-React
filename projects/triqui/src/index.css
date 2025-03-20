@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.button-style {
+  @apply h-[35px] w-[150px] border-2 border-white rounded-3xl hover:bg-white hover:text-black hover:border-black hover:cursor-pointer;
+}
