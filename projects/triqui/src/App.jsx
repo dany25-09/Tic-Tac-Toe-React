@@ -53,7 +53,7 @@ function App() {
   }
 
   const updateBoard = (index) => {
-    //no se actualiza esta poscicion si ya esta ocupada
+    //no se actualiza esta poscicion si ya esta ocupada o si ya hay un ganador
     if(board[index] !== null || winner) return  
 
     //actualiza el tablero
@@ -69,8 +69,14 @@ function App() {
     const newWinner = checkWinner(newBoard)
     if(newWinner){
       setWinner(newWinner) //actualiza el ganador (Es asincrono)
-      console.log('Ganador:', winner)
-    }
+    } // todo:check id game is over 
+  }
+
+  //Basta con poner todos los estados en su valor inicial
+  const resetGame = () => {
+    setBoard(Array(9).fill(null))
+    setTurn(TURNS.X)
+    setWinner(null)
   }
 
   return (
@@ -89,6 +95,27 @@ function App() {
           <Square isSelected={turn === TURNS.X}>{TURNS.X}</Square>
           <Square isSelected={turn === TURNS.O}>{TURNS.O}</Square>
       </section>
+      {
+        winner !== null && (
+          <section className='absolute inset-0 w-screen h-screen grid place-items-center bg-black/70'>
+            <div className='bg-[#111] h-[300px] w-[320px] border-2 border-[#eee] rounded-[10px] flex flex-col justify-center items-center gap-5'>
+              <h2>
+                {
+                  winner === false ? 'Empate' : 'Ganó'
+                }
+              </h2>
+
+              <header className='mx-auto w-fit rounded-[10px] flex gap-[15px]'>
+                {winner && <Square>{winner}</Square>}
+              </header>
+
+              <footer>
+                <button onClick={resetGame} className='h-[35px] w-[150px] rounded-4xl border-2 border-white hover:bg-gray-700 cursor-pointer'>Empezar de nuevo</button>
+              </footer>
+            </div>
+          </section>
+        )
+      }
     </main>
   )
 }
