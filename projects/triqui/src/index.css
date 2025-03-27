@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
-.button-style {
-  @apply h-[35px] w-[150px] border-2 border-white rounded-3xl hover:bg-white hover:text-black hover:border-black hover:cursor-pointer;
+.main-style{
+  @apply flex flex-col justify-center items-center mt-5 lg:gap-5 md:gap-15
 }
+
+.button-style {
+  @apply lg:h-[35px] lg:w-[150px] lg:text-base border-2 border-white rounded-3xl hover:bg-[#D4ADFC] hover:text-black hover:border-black hover:cursor-pointer md:h-[70px] md:w-[250px] md:text-2xl; 
+}
+
+.encode-sans {
+  font-family: "Encode Sans", sans-serif;
+}
+
+.style-h1 {
+  @apply lg:text-4xl font-bold text-[#F2F2F2] md:text-6xl;
+}
+

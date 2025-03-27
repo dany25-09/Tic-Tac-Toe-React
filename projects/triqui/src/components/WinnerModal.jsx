@@ -3,19 +3,19 @@ import { Square } from './Square'
 const WinnerModal = ({ winner, resetGame }) => {
     if(winner === null) return null
 
-    const winnerText = winner === false ? 'Empate' : 'Ganó'
+    const winnerText = winner === false ? 'Empate' : 'Felicidades al ganador!'
 
     return(
         <section className='absolute inset-0 w-screen h-screen grid place-items-center bg-black/70'>
-        <div className='bg-[#111] h-[300px] w-[320px] border-2 border-[#eee] rounded-[10px] flex flex-col justify-center items-center gap-5'>
-            <h2>{winnerText}</h2>
+        <div className='bg-[#5C469C] lg:h-[300px] lg:w-[320px] border-2 border-white rounded-[10px] flex flex-col justify-center items-center gap-10 md:h-[450px] md:w-[450px]'>
+            <h2 className='lg:text-xl md:text-3xl'>{winnerText}</h2>
 
-            <header className='mx-auto w-fit rounded-[10px] flex gap-[15px]'>
-            {winner && <Square>{winner}</Square>}
+            <header className='mx-auto w-fit rounded-[10px] flex gap-[5px]'>
+                {winner && <Square cl>{winner}</Square>}
             </header>
 
             <footer>
-            <button onClick={resetGame} className='button-style'>Empezar de nuevo</button>
+                <button onClick={resetGame} className='button-style'>Reset juego</button>
             </footer>
         </div>
         </section>

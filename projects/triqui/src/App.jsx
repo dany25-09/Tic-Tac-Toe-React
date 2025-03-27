@@ -62,8 +62,8 @@ function App() {
   };
 
   return (
-    <main className='flex flex-col justify-center items-center w-fit mx-auto mt-10 gap-5'>
-      <h1>Tic Tac Toe</h1>
+    <main className='main-style'>
+      <h1 className='style-h1'>Tic Tac Toe</h1>
       <ResetGame handleReset={resetGame} />
       <Board board={board} updateBoard={updateBoard} />
       <TurnIndicator turn={turn} />

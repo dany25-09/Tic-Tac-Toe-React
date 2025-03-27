@@ -2,7 +2,7 @@ import '../index.css'
 
 const Square = ({children, isSelected, updateBoard, index}) => {
 
-    const className = `w-[90px] h-[90px] border-2 border-gray-300 rounded-md grid place-items-center cursor-pointer text-4xl ${isSelected ? 'text-white bg-[#09f]' : ''}`
+    const className = `lg:w-[90px] lg:h-[90px] border-2 border-[#D4ADFC] rounded-md grid place-items-center cursor-pointer text-4xl md:w-[170px] md:h-[170px]   ${isSelected ? 'text-white  border-5 bg-[#D4ADFC]' : ''}`
   
     const handleClick = () => {
       updateBoard(index)
