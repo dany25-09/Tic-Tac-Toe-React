@@ -7,8 +7,8 @@ const WinnerModal = ({ winner, resetGame }) => {
 
     return(
         <section className='absolute inset-0 w-screen h-screen grid place-items-center bg-black/70'>
-        <div className='bg-[#5C469C] lg:h-[300px] lg:w-[320px] border-2 border-white rounded-[10px] flex flex-col justify-center items-center gap-10 md:h-[450px] md:w-[450px]'>
-            <h2 className='lg:text-xl md:text-3xl'>{winnerText}</h2>
+        <div className='bg-[#5C469C] h-[330px] w-[330px] border-2 border-white rounded-[10px] flex flex-col justify-center items-center gap-10 md:h-[450px] md:w-[450px]'>
+            <h2 className='text-2xl lg:text-xl md:text-3xl lg:h-[300px] lg:w-[320px]'>{winnerText}</h2>
 
             <header className='mx-auto w-fit rounded-[10px] flex gap-[5px]'>
                 {winner && <Square cl>{winner}</Square>}
