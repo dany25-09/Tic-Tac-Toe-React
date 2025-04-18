@@ -9,7 +9,7 @@ import { checkWinnerFrom, checkEndGame } from './Logic/board';
 import { saveGameToStorage, resetGameFromStorage } from '../storage/index';
 
 import './index.css';
-import confetti from 'canvas-confetti';
+import confetti from 'canvas-confetti;
 
 function App() {
   const [board, setBoard] = useState(() => {
