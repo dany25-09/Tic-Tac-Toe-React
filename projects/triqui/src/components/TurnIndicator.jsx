@@ -1,5 +1,5 @@
-import { Square } from "./Square"
-import { TURNS } from "../constants"
+import { Square } from './Square'
+import { TURNS } from '../constants'
 import '../index.css'
 
 const TurnIndicator = ({turn}) => {

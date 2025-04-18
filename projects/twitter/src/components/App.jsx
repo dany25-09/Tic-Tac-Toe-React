@@ -1,9 +1,9 @@
-import '../index.css';
-import {XFollowCard} from './XFollowCard';
+import '../index.css'
+import {XFollowCard} from './XFollowCard'
 
 function App() {
 
-  const formatUserName = (userName) => `@${userName}`;
+  const formatUserName = (userName) => `@${userName}`
 
   return(
     <section className='flex flex-col gap-4'>
@@ -17,4 +17,4 @@ function App() {
   )
 }
 
-export {App};
+export {App}

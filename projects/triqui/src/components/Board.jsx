@@ -1,4 +1,4 @@
-import { Square } from './Square';
+import { Square } from './Square'
 
 const Board = ({board, updateBoard}) => {
     return( 
@@ -13,4 +13,4 @@ const Board = ({board, updateBoard}) => {
         </section>
     )}
 
-export { Board };
+export { Board }

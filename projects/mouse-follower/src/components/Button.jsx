@@ -1,7 +1,7 @@
 const Button = ({enabled, setEnabled}) => {
     return(
         <button className='rounded-xl
-            w-[250px] h-[50px]
+            w-[300px] h-[50px]
             px-5 py-2.5
             text-lg font-bold
           bg-[#ef476f] text-[#242424]
